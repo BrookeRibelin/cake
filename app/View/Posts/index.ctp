@@ -1,4 +1,6 @@
-<h1>Blog posts</h1>
+</br>
+<h1><big><b>Blog posts</b></big></h1>
+</br>
 <p><?php echo $this->Html->link('Add Post', array('action' => 'add')); ?></p>
 <table>
     <tr>

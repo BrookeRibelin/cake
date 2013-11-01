@@ -44,9 +44,22 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</div>
 		<div id="content">
 
+			<div style="text-align: right;">
+				<?php if (($logged_in) && ($current_user['role'] == 'admin')): ?>
+					Welcome <?php echo $current_user["username"]; ?>. <?php echo $this->Html->link('Logout', array('controller'=>'users', 'action'=>'logout')); ?>
+					<h1>ADMIN</h1>
+				<?php elseif ($logged_in): ?>
+					Welcome <?php echo $current_user["username"]; ?>. <?php echo $this->Html->link('Logout', array('controller'=>'users', 'action'=>'logout')); ?>
+				<?php else: ?>
+					<?php echo $this->Html->link('Login', array('controller'=>'users', 'action'=>'login')); ?>
+				<?php endif; ?>
+			</div>
+
 			<?php echo $this->Session->flash(); ?>
+			<?php echo $this->Session->flash('auth'); ?>
 
 			<?php echo $this->fetch('content'); ?>
+
 		</div>
 		<div id="footer">
 			<?php echo $this->Html->link(

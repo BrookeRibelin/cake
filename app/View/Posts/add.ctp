@@ -1,3 +1,5 @@
+<?php echo $this->Html->getCrumbs(' > ','Cancel'); ?></br></br>
+
 <h1>Add Post</h1>
 <?php
 echo $this->Form->create('Post');
